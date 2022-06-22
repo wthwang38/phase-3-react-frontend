@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>The Sneakers Shop</div>
+    <div>Old is Gold</div>
   )
 }
 

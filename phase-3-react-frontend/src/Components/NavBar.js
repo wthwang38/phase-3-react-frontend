@@ -2,7 +2,14 @@ import React from 'react'
 
 function NavBar() {
   return (
-    <div>NavBar</div>
+    <div className='NavBar'>NavBar
+
+       <button className='button'>Home</button>
+       
+       <button className='button'>Sneakers</button>
+
+       <button className='button'>Login</button> 
+    </div>
   )
 }
 

@@ -1,8 +1,15 @@
 import React from 'react'
+import Cards from './Cards'
+
 
 function Container() {
   return (
-    <div>Container</div>
+    <div>Container
+
+        <Cards/>
+
+    </div>
+
   )
 }
 

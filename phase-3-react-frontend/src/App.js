@@ -13,13 +13,15 @@ function App() {
       .then((r) => r.json())
       .then((sneakers) => setSneakers(sneakers));
   }, [change]);
+
   return (
     <div>
       <Home />
       <NavBar/>
       
       <Container sneakers={sneakers} 
-      change={change} setChange={setChange}/>
+      change={change} setChange={setChange}
+      />
 
     </div>
   );

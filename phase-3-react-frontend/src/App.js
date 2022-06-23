@@ -4,6 +4,7 @@ import NavBar from './Components/NavBar';
 import Container from './Components/Container';
 import Form from './Components/Form';
 import React, { useState, useEffect } from 'react';
+
 function App() {
 
   const [sneakers, setSneakers] = useState([]);
@@ -15,10 +16,12 @@ function App() {
   }, []);
   return (
     <div>
-      <NavBar/>
       <Home />
+      <NavBar/>
+      
       <Container sneakers={sneakers}/>
       <Form/>
+
     </div>
   );
 }

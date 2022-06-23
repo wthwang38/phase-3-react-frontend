@@ -2,7 +2,10 @@ import React from 'react'
 
 function Home() {
   return (
-    <div>Old is Gold</div>
+    <div>
+        <h1 id='header'>Old is Gold</h1>
+
+        </div>
   )
 }
 

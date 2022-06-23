@@ -1,54 +1,143 @@
-/* box sizing reset */
-*,
-*::before,
-*::after {
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
+#header{
+
+}
+
+.container {
+
+  max-width: 500px;
+  margin: auto;
+  border: 3px solid #73AD21;
+}
+:root {
+  --primColor: #dcdcdc;
+  --secoColor: #555555;
+  --cornerRad: 4px;
+}
+details {
+  margin: 40px;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  background-color: var(--primColor);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+summary {
+  writing-mode: vertical-lr;
+  text-align: center;
+  padding: 12px 10px;
+  width: 23px;
+  height: 17px;
+  background-color: var(--primColor);
+  border: 2px solid var(--secoColor);
+  border-radius: var(--cornerRad);
+  color: var(--secoColor);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  transition: transform 200ms ease-in-out 0s;
+  position: relative;
 }
-
-.NavBar {
-  background: rgb(255, 255, 255, 0.8);
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  z-index: 10;
-  position: sticky;
+summary::before,
+summary::after {
+  position: static;
   top: 0;
-  margin: 0 -16px;
-  padding: 16px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  left: 0;
+}
+summary::before {
+  content: "";
+}
+summary::after {
+  position: absolute;
+  top:4px;
+  left:-2px;
+  content: "III";
+  letter-spacing: -1px;
+  
+}
+summary:hover {
+  transform: scale(1.1);
+}
+summary::marker {
+  font-size: 0;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .menu {
+  animation-name: menuAnim;
+}
+details[open] summary::before {
+  content: "X";
+}
+details[open] summary::after {
+  content: "";
+}
+.menu {
+  height: 0;
+  width: fit-content;
+  border-radius: var(--cornerRad);
+  background-color: var(--primColor);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  animation: closeMenu 300ms ease-in-out forwards;
+}
+.menu a {
+  padding: 12px 24px;
+  margin: 0 16px;
+  color: var(--secoColor);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;
+  transition: filter 200ms linear 0s;
+}
+.menu a:nth-of-type(1) {
+  padding-top: 24px;
+}
+.menu a:nth-last-of-type(1) {
+  border-bottom: none;
+}
+.menu a:hover {
+  filter: brightness(200%);
+}
+details::before {
+  color: var(--secoColor);
+  position: absolute;
+  margin-left: 80px;
+  padding: 10px 10px;
+  opacity: 0.4;
+}
+details[open]::before {
+  animation: fadeMe 300ms linear forwards;
+}
+@keyframes menuAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 312px;
+  }
+}
+@keyframes fadeMe {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .card {
-  background: rgb(255, 255, 255, 0.8);
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
-  margin-top: 16px;
-  margin-bottom: 16px;
-  padding: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .3);
-  color: #222;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  /*background-color: #fff;*/
-  -webkit-transition: background-color 1s ease-out;
-  -moz-transition: background-color 1s ease-out;
-  -o-transition: background-color 1s ease-out;
-  transition: background-color 1s ease-out;
-}
+  margin: 0 auto;
+} 
 
 .button {
   position: relative;
@@ -78,4 +167,9 @@ code {
 .button:active {
   transform: translateY(4px);
   box-shadow: 0 0 0 #696;
+}
+.image {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
 }

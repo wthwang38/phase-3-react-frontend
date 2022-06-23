@@ -1,34 +1,42 @@
 import React, {useState} from 'react'
 
-function Form() {
+function Form({sneaker_id, setChange, change}) {
 
-  const initialForm = {
-    name: "",
-    comment: ""
+ const [comment, setComment] = useState('');
+ const [name, setName] = useState('')
+
+
+
+  function handleSubmit(e) {
+   e.preventDefault();
+    fetch("http://localhost:9292/reviews", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        comment: comment,
+        name: name,
+        sneaker_id: sneaker_id
+      }),
+    })
+    .then(r => r.json())
+    .then(() =>{
+        setChange(!change)
+        setComment("");
+        setName("")
+    }
+    )
   }
-  const [form, setForm] = useState(initialForm);
-
-
-  // function handleSubmit(e) {
-  //   e.preventDefault();
-  //   fetch("http://localhost:9292/reviews", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify(form),
-  //   })
-  //     .then((r) => r.json())
-  //     .then((newReview) => onAddReview());
-  // }
+  
 
   return (
   <div>
-    {/* <form onSubmit={handleSubmit}>
-        <input name="name" placeholder="Name" value={form.name} onChange={handleChange} />
-                <textarea name="Comment" placeholder="Write your comment here..." rows={10} value={form.comment} onChange={handleChange} />
+    <form onSubmit={handleSubmit}>
+        <input name="name" placeholder="Name" value={name} onChange={(e)=> setName(e.target.value)} />
+                <textarea name="Comment" placeholder="Write your comment here..." rows={10} value={comment} onChange={(e)=> setComment(e.target.value)} />
                 <input id="submit" className="button" type="submit" value="Write Review" />
-    </form>; */}
+    </form>
   </div>
   )
 }

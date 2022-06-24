@@ -24,6 +24,10 @@ const EditForm = ({ sneakerId, completeEditing, change, setChange}) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (sneakerId === null){
+        alert("Please pick a sneaker to edit!")
+    }
+    else{
     fetch(`http://localhost:9292/sneakers/${sneakerId}`, {
       method: "PATCH", 
       headers: {
@@ -34,10 +38,9 @@ const EditForm = ({ sneakerId, completeEditing, change, setChange}) => {
     })
     .then(r => r.json())
     .then(() => {
-        setChange(!change)
     })
-
-    completeEditing();
+    setChange(!change)
+    completeEditing();}
   }
 
   return (

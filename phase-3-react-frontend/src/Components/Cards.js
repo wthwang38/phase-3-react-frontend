@@ -19,7 +19,7 @@ const handleChange = () => {
         <p>Year: {year}</p>
         <button onClick={handleDeleteClick}>Buy</button><button>Sell</button>
         {reviews.map(review => <p>{review.user.name}: {review.comment}</p>)}
-        <Form sneaker_id={id} setChange={setChange} change={change}/>
+        <Form key={id} sneaker_id={id} setChange={setChange} change={change}/>
 
     </div>
   )

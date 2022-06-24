@@ -34,7 +34,7 @@ function Form({sneaker_id, setChange, change}) {
   <div>
     <form onSubmit={handleSubmit}>
         <input name="name" placeholder="Name" value={name} onChange={(e)=> setName(e.target.value)} />
-                <textarea name="Comment" placeholder="Write your comment here..." rows={10} value={comment} onChange={(e)=> setComment(e.target.value)} />
+                <textarea name="Comment" placeholder="Write your comment here..." rows={5} value={comment} onChange={(e)=> setComment(e.target.value)} />
                 <input id="submit" className="button" type="submit" value="Write Review" />
     </form>
   </div>

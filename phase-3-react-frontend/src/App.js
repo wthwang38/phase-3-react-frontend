@@ -3,6 +3,7 @@ import Home from './Components/Home';
 import NavBar from './Components/NavBar';
 import Container from './Components/Container';
 import React, { useState, useEffect } from 'react';
+import AddForm from './Components/AddForm';
 
 function App() {
 
@@ -18,8 +19,10 @@ function App() {
     <div>
       <Home />
       <NavBar/>
-      
       <Container sneakers={sneakers} 
+      change={change} setChange={setChange}
+      />
+      <AddForm sneakers={sneakers} 
       change={change} setChange={setChange}
       />
 

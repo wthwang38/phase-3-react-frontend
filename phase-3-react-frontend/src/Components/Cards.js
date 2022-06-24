@@ -18,10 +18,11 @@ function handleDeleteClick() {
         <p>Price: ${price}</p>
         <p>condition: {condition}</p>
         <p>Year: {year}</p>
-        <button onClick={handleDeleteClick}>Buy</button>          <button onClick={handleEditClick}>
+        <button onClick={handleDeleteClick}>Buy</button><button onClick={handleEditClick}>
             <FaPencilAlt />
           </button>
-        {reviews.map(review => <p>{review.user.name}: {review.comment}</p>)}
+        <ul>{reviews.map(review => <li>{review.user.name}: {review.comment}</li>)}
+        </ul>
         <Form key={id} sneaker_id={id} setChange={setChange} change={change}/>
 
     </div>

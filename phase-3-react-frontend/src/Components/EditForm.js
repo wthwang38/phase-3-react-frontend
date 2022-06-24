@@ -44,7 +44,7 @@ const EditForm = ({ sneakerId, completeEditing, change, setChange}) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="form" autoComplete="off">
+    <form id="edit" onSubmit={handleSubmit} className="form" autoComplete="off">
       <h3>Edit Sneaker</h3>
 
       <label htmlFor="name">Name</label>

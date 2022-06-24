@@ -25,13 +25,15 @@ function App() {
     <div>
       <Home />
       <NavBar/>
+
       <Container sneakers={sneakers} 
       change={change} setChange={setChange}
       enterEditModeFor={enterEditModeFor}/>
+
       <AddForm sneakers={sneakers} 
       change={change} setChange={setChange}
       />
-      <EditForm sneakerId={sneakerId} setChange={setChange} change={change} completeEditing={completeEditing}/>
+ <EditForm sneakerId={sneakerId} setChange={setChange} change={change} completeEditing={completeEditing}/>
 
     </div>
   );

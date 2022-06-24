@@ -6,11 +6,11 @@
 text-align: center;
 }
 
-.container {
+.card {
 
   max-width: 500px;
   margin: auto;
-  border: 3px solid #73AD21;
+  border: 3px solid #2d2f2a;
 }
 :root {
   --primColor: #dcdcdc;
@@ -172,4 +172,10 @@ details[open]::before {
   width: 100%;
   height: auto;
   vertical-align: middle;
+}
+ul{
+  list-style: none
+}
+form{
+  
 }

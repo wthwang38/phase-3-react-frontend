@@ -6,9 +6,13 @@ function NavBar() {
       <details>
           <summary></summary>
           <nav className='menu'>
-          <a>Air Jordan OGs</a>
+            <a href="#sneakers">
+            Air Jordan OGs
+            </a>
           <a></a>
-          <a>Sell a Sneaker</a>
+          <a href="#sell">
+            Sell a Sneaker
+            </a>
           </nav>
        </details>
 

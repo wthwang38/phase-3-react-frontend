@@ -41,8 +41,9 @@ const AddForm = ({ setChange, change }) => {
   };
 
   return (
+    <div id="add">
     <section>
-      <form className="form" autoComplete="off" onSubmit={handleSubmit}>
+      <form  className="form" autoComplete="off" onSubmit={handleSubmit}>
         <h3>Add New Sneaker</h3>
 
         <label htmlFor="name">Name</label>
@@ -91,6 +92,7 @@ const AddForm = ({ setChange, change }) => {
         <button type="submit">Add NewSneaker</button>
       </form>
     </section>
+    </div>
   )}
 
 export default AddForm
